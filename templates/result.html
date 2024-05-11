@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Prediction Results</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <script>
+    // Set the value of the outcome variable
+    var outcome = "High";
+  </script>
+  <body>
+    <div class="container">
+      <h1>Prediction Results</h1>
+      {% if outcome == 'Low' %}
+        <div class="alert alert-success" role="alert">
+          The predicted level of Lung Cancer is Low.
+        </div>
+      {% elif outcome == 'Medium' %}
+        <div class="alert alert-warning" role="alert">
+          The predicted level of Lung Cancer is Medium.
+        </div>
+      {% else %}
+        <div class="alert alert-danger" role="alert">
+          The predicted level of Lung Cancer is High.
+        </div>
+      {% endif %}
+      <p>If you have any concerns about your lung health, please consult a doctor.</p>
+      <p>Click <a href="https://www.google.com/maps/search/lung+cancer+doctors/" class="consult-doctor">here</a> to find a doctor near you.</p>
+    </div>
+  </body>
+</html>
+
