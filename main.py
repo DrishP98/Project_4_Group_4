@@ -19,7 +19,7 @@ def process_and_scale_data(form_data, scaler):
 
         # Extract age values from form data
         age = int(form_data['age']) 
-        
+
         # Include age and gender at the beginning
         data = [age, gender]  
         print("Data after inserting gender:", data)
