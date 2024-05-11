@@ -7,7 +7,7 @@ from sklearn.preprocessing import StandardScaler
 app = Flask(__name__)
 
 # Load our pre-trained h5 model
-model = tf.keras.models.load_model('LungCancer.h5')
+model = tf.keras.models.load_model('Optimised_model.h5')
 # Load the scaler object
 scaler = joblib.load('scaler.pkl')
 
@@ -17,13 +17,21 @@ def process_and_scale_data(form_data, scaler):
         # Convert gender to numerical value
         gender = 1 if form_data['gender'] == 'Male' else 2
 
-        # Extract numerical values from form data
-        data = [int(form_data[key]) for key in form_data.keys() if key != 'gender']
-        # Replace gender value with converted gender
-        data.insert(0, gender)  
+        # Extract age values from form data
+        age = int(form_data['age']) 
+        
+        # Include age and gender at the beginning
+        data = [age, gender]  
+        print("Data after inserting gender:", data)
+
+        # Extract other numerical values from form data
+        other_data = [int(form_data[key]) for key in form_data.keys() if key not in ['age', 'gender']]
+        data.extend(other_data) 
+        print("Processed data shape:", data)
 
         # Reshape the data to match the expected input shape
         processed_data = np.array(data).reshape(1, -1)
+        print("Processed data shape:", processed_data.shape)
 
         # Scale the processed data using the pre-fitted scaler
         scaled_data = scaler.transform(processed_data)
@@ -83,6 +91,9 @@ def result():
             # Return an error message if processing fails
             return render_template('error.html', message="Error processing form data")
 
+        # Print the processed form data for debugging
+        print("Processed Form Data:", scaled_data)
+
         # Predict outcome
         outcome = predict_outcome(scaled_data, model)
         if outcome is None:
@@ -100,4 +111,4 @@ def result():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=8080)
