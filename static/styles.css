@@ -84,3 +84,13 @@ button[type="submit"] {
     cursor: pointer;
   }
 		
+  header {
+    background-color: #45a0dd; /* Blue color */
+    color: white; /* White text color */
+    padding: 20px; /* Add some padding for better appearance */
+}
+
+.container {
+    background-color: #eed77c; /* Yellow color */
+    padding: 20px; /* Add some padding for better appearance */
+}
