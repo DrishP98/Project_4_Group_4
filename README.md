@@ -13,7 +13,7 @@ The purpose of this project is to create an algorithm that can be used to predic
 
 2. What additional risk factors make a person more susceptible to lung cancer? It is hypothesised that smoking (both passive and actual), air pollution exposure and alcohol use may lead to a higher chance of contracting lung cancer. These are explored in an initial tableau analysis. 
 
-#### Models
+#### Models 
 1. Logistic Regression
 2. Random Forest
 3. K-Nearest

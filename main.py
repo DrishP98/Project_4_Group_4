@@ -9,16 +9,16 @@ app = Flask(__name__)
 # Load our pre-trained h5 model
 model = tf.keras.models.load_model('Optimised_model.h5')
 # Load the scaler object
-scaler = joblib.load('scaler.pkl')
+scaler = joblib.load('scaler_1.pkl')
 
 # Function to process and scale the form data
 def process_and_scale_data(form_data, scaler):
     try:
         # Convert gender to numerical value
-        gender = 1 if form_data['gender'] == 'Male' else 2
+        gender = 1 if form_data.get('gender') == 'Male' else 2
 
         # Extract age values from form data
-        age = int(form_data['age']) 
+        age = int(form_data.get('age')) 
 
         # Include age and gender at the beginning
         data = [age, gender]  
@@ -27,7 +27,7 @@ def process_and_scale_data(form_data, scaler):
         # Extract other numerical values from form data
         other_data = [int(form_data[key]) for key in form_data.keys() if key not in ['age', 'gender']]
         data.extend(other_data) 
-        print("Processed data shape:", data)
+        print("Processed data:", data)
 
         # Reshape the data to match the expected input shape
         processed_data = np.array(data).reshape(1, -1)
