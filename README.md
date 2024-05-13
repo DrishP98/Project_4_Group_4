@@ -4,7 +4,7 @@ Drishti Patel, Priyanshu Rana, Michelle Harris
 ## Lung Cancer Predictive Modeling
 
 ### Objective.
-Lung Cancer is the fifth most diagnosed cancer in Australia (cnacer.org.au). It is estimated that more than 14, 700 people were diagnosede with lung canver in 2023.
+Lung Cancer is the fifth most diagnosed cancer in Australia (cancer.org.au). It is estimated that more than 14, 700 people were diagnosede with lung cancer in 2023.
 
 The purpose of this project is to create an algorithm that can be used to predict lung cancer risk as low, medium or high with a greter than 75% accuracy. This is achived by analysing a lung cancer dataset containing 1000 records sourced from Kaggle "Cancer Patients and air pollution a new link" https://www.kaggle.com/datasets/thedevastator/cancer-patients-and-air-pollution-a-new-link/data.
 
@@ -23,8 +23,11 @@ The purpose of this project is to create an algorithm that can be used to predic
 #### Dependencies
 - Python Pandas
 - Python Matplotlib
+- Scikit-learn
+- Tensorflow
 - PySpark
 - Tableau
+- Google collaboratory 
 
 ### Data Model Implementation
 
