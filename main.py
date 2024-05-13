@@ -7,9 +7,9 @@ from sklearn.preprocessing import StandardScaler
 app = Flask(__name__)
 
 # Load our pre-trained h5 model
-model = tf.keras.models.load_model('Optimised_model.h5')
+model = tf.keras.models.load_model('Final_model.h5')
 # Load the scaler object
-scaler = joblib.load('scaler_1.pkl')
+scaler = joblib.load('scaler.pkl')
 
 # Function to process and scale the form data
 def process_and_scale_data(form_data, scaler):
