@@ -26,14 +26,14 @@ The purpose of this project is to create an algorithm that can be used to predic
 - Scikit-learn
 - Tensorflow
 - PySpark
-- Tableau
+- Tableau (https://public.tableau.com/app/profile/priyanshu.rana3646/viz/Project4TableauFinal/Story1?publish=yes)
 - Google collaboratory
 - Flask
 
 ### Data Model Implementation
 
 The dataset was read into a pandas DataFrame and examined, index and Patient Id columns were removed and the level column identified as the target for our modeling. The low, medium, high level for each patient was then converted from categorical to numerical for analysis.
-Tableau was used for an exploratory analysis of the dataset (see tableau_figXXX) where smoking and alcohol use appeared to be contributory factors, the dataset was also displayed using a matplotlib heatmap. 
+Tableau was used for an exploratory analysis of the dataset (see tableau_fig(https://public.tableau.com/app/profile/priyanshu.rana3646/viz/Project4TableauFinal/Story1?publish=yes)) where smoking and alcohol use appeared to be contributory factors, the dataset was also displayed using a matplotlib heatmap. 
 
 A series of boxplots was created to determine if there were any outliers in the data, an outlier in the age category was discovered.
 
