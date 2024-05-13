@@ -27,7 +27,8 @@ The purpose of this project is to create an algorithm that can be used to predic
 - Tensorflow
 - PySpark
 - Tableau
-- Google collaboratory 
+- Google collaboratory
+- Flask
 
 ### Data Model Implementation
 
@@ -36,4 +37,20 @@ Tableau was used for an exploratory analysis of the dataset (see tableau_figXXX)
 
 A series of boxplots was created to determine if there were any outliers in the data, an outlier in the age category was discovered.
 
-The dataset was then parsed to logistic regession, random forest, k-nearest and decision tree modelling for an initial assessment before being scaled using standard scaler and analysed again to compare the results.
+The dataset was then parsed to logistic regession, random forest, k-nearest and decision tree modelling for an initial assessment before being scaled using standard scaler and analysed again to compare the results. We the created a deep neural network model and optimised it using keras tuner and created an accuracy graph.
+* Linear regression accuracy without scaling - 0.98
+* Linear regression accuracy with scaling - 0.98
+* Random Forest, KNN & Decision Tree accuracy on scaled data - 1.0
+* Neural network model with activation relu and epochs 20 based on hyperparameters - 1.0 (0.07 loss)
+
+### Webpage
+A basic flask app was created using python script to allow users to answer an assessment form that will predict lung cancer based on our neural network model. This can be run through your local server on port 8080.
+
+### References
+https://www.kaggle.com/datasets/thedevastator/cancer-patients-and-air-pollution-a-new-link/data
+https://scikit-learn.org/stable/
+https://www.lung.org/lung-health-diseases/lung-disease-lookup/lung-cancer/basics/lung-cancer-types
+https://spark.apache.org/docs/latest/api/python/index.html
+https://keras.io/api/models/ 
+https://keras.io/api/metrics/ 
+https://www.tensorflow.org/tutorials/keras/keras_tuner 
